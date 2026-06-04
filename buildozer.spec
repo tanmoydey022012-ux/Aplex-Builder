@@ -6,13 +6,19 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
 
-# Fixed to use stable Python 3.11.1 to avoid the version 3.14 experimental crash!
+# 1. Hard lock the programming environment
 requirements = python3==3.11.1,kivy,speechrecognition,requests,setuptools
 
 orientation = portrait
 fullscreen = 1
 
-# System permission parameters for your AI mic features
+# 2. Hard lock the Android SDK platform tools
+android.api = 33
+android.minapi = 24
+android.ndk = 25b
+android.ndk_api = 21
+
+# 3. Security Permissions
 android.permissions = INTERNET, RECORD_AUDIO
 android.accept_sdk_license = True
 
